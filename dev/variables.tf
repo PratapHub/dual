@@ -36,3 +36,16 @@ variable "region" {
   type        = string
   description = "The AWS region to launch the RDS MySQL instance in"
 }
+
+variable "availability_zone" {
+  type        = list(string)
+  description = "The list of availability zones for the secondary RDS MySQL instances"
+default = ["us-west-1a", "us-west-1b", "us-west-1c"]
+}
+
+
+variable "allocated_storage" {
+  type        = number
+  description = "The amount of storage to allocate for the RDS instance (in GB)"
+}
+    
